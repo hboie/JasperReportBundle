@@ -1,0 +1,3 @@
+hboie_jasper_report_homepage:
+    path:     /
+    defaults: { _controller: HboieJasperReportBundle:Default:index }

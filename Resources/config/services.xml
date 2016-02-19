@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service
+                id="jasperreport.factory"
+                class="hboie\JasperReportBundle\Factory"
+                shared="false">
+        </service>
+
+        <service
+                id="jasperreport.client"
+                class="Jaspersoft\Client\Client"
+                shared="true">
+            <factory service="jasperreport.factory" method="getClient" />
+        </service>
+
+        <service
+                id="jasperreport.reportservice"
+                class="Jaspersoft\Service\ReportService"
+                shared="true">
+            <factory service="jasperreport.factory" method="getReportService" />
+        </service>
+
+    </services>
+</container>
