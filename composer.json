@@ -1,5 +1,5 @@
 {
-  "name": "hboie/JasperReportBundle",
+  "name": "hboie/jasper-report-bundle",
   "description": "Symfony 2 Bundle integrating the Jaspersoft REST v2 client (jaspersoft/rest-client)",
   "type": "symfony-bundle",
   "authors": [
