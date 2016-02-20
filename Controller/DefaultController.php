@@ -1,6 +1,6 @@
 <?php
 
-namespace hboie\JasperReportBundle\Controller;
+namespace Hboie\JasperReportBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 

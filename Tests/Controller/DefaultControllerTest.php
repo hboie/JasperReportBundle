@@ -1,6 +1,6 @@
 <?php
 
-namespace hboie\JasperReportBundle\Tests\Controller;
+namespace Hboie\JasperReportBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

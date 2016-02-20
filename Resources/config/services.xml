@@ -7,7 +7,7 @@
     <services>
         <service
                 id="jasperreport.factory"
-                class="hboie\JasperReportBundle\Factory"
+                class="Hboie\JasperReportBundle\Factory"
                 shared="false">
         </service>
 

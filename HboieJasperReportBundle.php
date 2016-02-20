@@ -1,6 +1,6 @@
 <?php
 
-namespace hboie\JasperReportBundle;
+namespace Hboie\JasperReportBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
