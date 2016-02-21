@@ -43,3 +43,17 @@ or directly access the <code>ReportService</code> using the Symfony service <cod
 ```php
     $report = $this->get('jasperreport.reportservice')->runReport('/reports/TestReport', 'pdf');
 ```
+So a controller giving back a pdf-report would look like
+```php
+    public function reportAction(Request $request)
+    {
+        $report = $this->get('jasperreport.reportservice')->runReport('/reports/TestReport', 'pdf');
+
+        $response = new Response($report);
+        $response->headers->set('Content-type', 'application/pdf');
+        $response->headers->set('Content-Disposition', 'inline; filename=Report.pdf');
+        $response->headers->set('Cache-Control', 'must-revalidate');
+
+        return $response;
+    }
+```
