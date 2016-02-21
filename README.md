@@ -4,12 +4,31 @@ The JasperReportBundle requires jaspersoft/rest-client and provides an JasperRep
 
 ## Installation
 
-1. Add bundle to <code>composer.json</code>:
-
-<pre><code>composer require hboie/jasper_report_bundle
-</code></pre>
-
-2. Register bundle in <code>app/AppKernel.php</code>
-
-<pre><code></pre></code>
-
+1 Add bundle to <code>composer.json</code>:
+```shel
+    composer require hboie/jasper_report_bundle
+```
+2 Register bundle in <code>app/AppKernel.php</code>:
+```php
+    $bundle = [
+            ...
+    new Hboie\JasperReportBundle\HboieJasperReportBundle(),
+            ...
+    ];
+```
+3 Add parameter to <code>app/config/config.yml</code>
+```yml
+    hboie_jasper_report:
+        host:      "%jasper_host%"
+        username:  "%jasper_user%"
+        password:  "%jasper_password%"
+        org_id:    "%jasper_org_id%"
+```
+4 Add a dummy configuration in <code>app/config/paramters.yml.dist</code>
+```yml
+    jasper_host: http://localhost:8080/jasperserver
+    jasper_user: jasperadmin
+    jasper_password: jasperadmin
+    jasper_org_id:
+```
+5 Add your own configuration in <code>app/config/paramters.yml</code>
