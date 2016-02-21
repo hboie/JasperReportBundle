@@ -32,3 +32,14 @@ The JasperReportBundle requires jaspersoft/rest-client and provides an JasperRep
     jasper_org_id:
 ```
 5 Add your own configuration in <code>app/config/paramters.yml</code>
+
+## Usage
+
+You can now access the <code>Client</code> object via the Symfony service <code>jasperreport.client</code>:
+```php
+    $client = $this->get('jasperreport.client');
+```
+or directly access the <code>ReportService</code> using the Symfony service <code>jasperreport.reportservice</code>:
+```php
+    $report = $this->get('jasperreport.reportservice')->runReport('/reports/TestReport', 'pdf');
+```
