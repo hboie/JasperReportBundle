@@ -1,6 +1,6 @@
 {
   "name": "hboie/jasper-report-bundle",
-  "description": "Symfony 2 Bundle integrating the Jaspersoft REST v2 client (jaspersoft/rest-client)",
+  "description": "Symfony 2-5 Bundle integrating the Jaspersoft REST v2 client (jaspersoft/rest-client)",
   "type": "symfony-bundle",
   "authors": [
     {
@@ -8,12 +8,12 @@
       "email": "hans.boie@gmx.de"
     }
   ],
-  "keywords": ["REST", "JasperReport", "symfony2", "bundle"],
+  "keywords": ["REST", "JasperReport", "symfony2", "symfony3", "symfony4", "symfony5", "bundle"],
   "homepage": "https://github.com/hboie/JasperReportBundle",
   "license": "MIT",
   "require": {
     "php": ">=5.3.2",
-    "symfony/framework-bundle": "~2.6|~3.0",
+    "symfony/framework-bundle": "~2.6|~3.0|~4.0|~5.0",
     "jaspersoft/rest-client": "v2.0.0"
   },
   "autoload": {
