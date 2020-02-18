@@ -22,7 +22,7 @@
                 id="jasperreport.reportservice"
                 class="Hboie\JasperReportBundle\ReportService"
                 shared="true">
-            <factory service="jasperreport.factory" method="getReportService" public="true"/>
+            <factory service="jasperreport.factory" method="getReportService"/>
         </service>
 
         <service id="Hboie\JasperReportBundle\ReportService" alias="jasperreport.reportservice" />
