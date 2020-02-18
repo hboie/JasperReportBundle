@@ -18,7 +18,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder('jasperreport');
-        $rootNode = $treeBuilder->root('jasperreport');
+        $rootNode = \method_exists($treeBuilder, 'getRootNode') ? $treeBuilder->getRootNode() : $treeBuilder->root('hboie_jasper_report');
 
         $rootNode
             ->children()

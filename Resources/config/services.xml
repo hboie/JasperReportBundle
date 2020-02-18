@@ -15,15 +15,17 @@
                 id="jasperreport.client"
                 class="Jaspersoft\Client\Client"
                 shared="true">
-            <factory service="jasperreport.factory" method="getClient" />
+            <factory service="jasperreport.factory" method="getClient"/>
         </service>
 
         <service
                 id="jasperreport.reportservice"
-                class="Jaspersoft\Service\ReportService"
+                class="Hboie\JasperReportBundle\ReportService"
                 shared="true">
-            <factory service="jasperreport.factory" method="getReportService" />
+            <factory service="jasperreport.factory" method="getReportService" public="true"/>
         </service>
+
+        <service id="Hboie\JasperReportBundle\ReportService" alias="jasperreport.reportservice" />
 
     </services>
 </container>

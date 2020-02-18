@@ -3,6 +3,7 @@
 namespace Hboie\JasperReportBundle;
 
 use Jaspersoft\Client\Client;
+use Hboie\JasperReportBundle\ReportService;
 
 class Factory
 {
@@ -10,6 +11,11 @@ class Factory
      * @var \Jaspersoft\Client\ $report_client
      */
     private $report_client;
+
+    /**
+     * @var ReportService
+     */
+    private $report_service;
 
     public function createClient($config)
     {
@@ -31,6 +37,10 @@ class Factory
 
     public function getReportService()
     {
-        return $this->report_client->reportService();
+        if ( ! isset( $this->report_service ) )
+        {
+            $this->report_service = new ReportService( $this->report_client->reportService() );
+        }
+        return $this->report_service;
     }
 }
