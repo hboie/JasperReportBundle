@@ -2,7 +2,7 @@
 
 The JasperReportBundle requires jaspersoft/rest-client and provides an JasperReport-Client as service in the Symfony service container.
 
-## Installation with Symfony 4 / 5
+## Installation with Symfony Flex (4 / 5)
 
 1 Add bundle to <code>composer.json</code>:
 ```shel
@@ -10,26 +10,25 @@ The JasperReportBundle requires jaspersoft/rest-client and provides an JasperRep
 ```
 2 The Bundle will be registred automatically and by executing the recipe the configuration 
 file <code>jasper-report.yaml</code>
-will be created in the <code>config/packages</code> directory
+will be created in the <code>config/packages</code> directory and the corresponding entries
+in the <code>.env</code> file will be made
 
 3 Change the standard setting in the file <code>jasper-report.yaml</code>
 
 ```yml
     hboie_jasper_report:
         host:      'http://localhost:8080/jasperserver'
-        username:  jasperadmin
-        password:  jasperadmin
-        org_id:    null
+        username:  '%env(HBOIE_JASPER_REPORT_USERNAME)%'
+        password:  '%env(HBOIE_JASPER_REPORT_PASSWORD)%'
+        org_id:    '%env(HBOIE_JASPER_REPORT_ORGID)%'
 ```
 
-e.g. you can reference the password in the <code>.env</code> file
+and in the <code>.env</code> file
 
-```yml
-    hboie_jasper_report:
-        host:      'http://localhost:8080/jasperserver'
-        username:  jasperadmin
-        password:  '%env(resolve:JASPER_ADMIN_PASSWD)%'
-        org_id:    null
+```
+HBOIE_JASPER_REPORT_USERNAME=jasperadmin
+HBOIE_JASPER_REPORT_PASSWORD=jasperadmin
+HBOIE_JASPER_REPORT_ORGID=
 ```
 
 ## Usage in Symfony 4 / 5
