@@ -1,6 +1,6 @@
 {
   "name": "hboie/jasper-report-bundle",
-  "description": "Symfony 2-5 Bundle integrating the Jaspersoft REST v2 client (jaspersoft/rest-client)",
+  "description": "Symfony 2-5 / Symfony Flex Bundle integrating the Jaspersoft REST v2 client (jaspersoft/rest-client)",
   "type": "symfony-bundle",
   "authors": [
     {
