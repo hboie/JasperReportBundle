@@ -12,11 +12,11 @@ class ReportService
 
     /**
      * ReportService constructor.
-     * @param \Jaspersoft\Service\ReportService $jaserReportService
+     * @param \Jaspersoft\Service\ReportService $reportService
      */
-    public function __construct(\Jaspersoft\Service\ReportService $jaserReportService)
+    public function __construct(\Jaspersoft\Service\ReportService $reportService)
     {
-        $this->jaserReportService = $jaserReportService;
+        $this->jaserReportService = $reportService;
     }
 
     /**
