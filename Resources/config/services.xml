@@ -50,5 +50,15 @@
             <tag name="console.command"/>
         </service>
 
+        <service id="Hboie\JasperReportBundle\Command\ExportResourceCommand">
+            <argument type="service" id="jasperreport.importexportservice" />
+            <tag name="console.command"/>
+        </service>
+
+        <service id="Hboie\JasperReportBundle\Command\ImportResourceCommand">
+            <argument type="service" id="jasperreport.importexportservice" />
+            <tag name="console.command"/>
+        </service>
+
     </services>
 </container>
