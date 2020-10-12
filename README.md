@@ -11,7 +11,7 @@ The JasperReportBundle requires jaspersoft/rest-client and provides an JasperRep
 [Import Resource Command](#import_resource_command)<br>
 [Copying Resources between different Servers](#copying_resources)<br>
 
-## Installation with Symfony Flex (4 / 5) <a name="installation_4_5" />
+## <a name="installation_4_5" ></a>Installation with Symfony Flex (4 / 5) 
 
 1 Add bundle to <code>composer.json</code>:
 ```shel
@@ -40,7 +40,7 @@ HBOIE_JASPER_REPORT_PASSWORD=jasperadmin
 HBOIE_JASPER_REPORT_ORGID=
 ```
 
-## Basic Usage in Symfony 4 / 5 <a name="basic_usage_4_5" />
+## <a name="basic_usage_4_5"></a>Basic Usage in Symfony 4 / 5
 
 The bundle supports autowiring, so you can access the report-service directly in your controller, e.g.
 ```php
