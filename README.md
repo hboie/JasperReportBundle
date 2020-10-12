@@ -2,6 +2,8 @@
 
 The JasperReportBundle requires jaspersoft/rest-client and provides an JasperReport-Client as service in the Symfony service container.
 
+[[_TOC_]]
+
 [Installation with Symfony Flex (4 / 5)](#installation_4_5)<br>
 [Basic Usage in Symfony 4 / 5](#basic_usage_4_5)<br>
 [Installation with Symfony 2 / 3](#installation_2_3)<br>
@@ -40,7 +42,7 @@ HBOIE_JASPER_REPORT_PASSWORD=jasperadmin
 HBOIE_JASPER_REPORT_ORGID=
 ```
 
-## <a name="basic_usage_4_5">Basic Usage in Symfony 4 / 5 </a>
+## Basic Usage in Symfony 4 / 5 <a name="basic_usage_4_5" />
 
 The bundle supports autowiring, so you can access the report-service directly in your controller, e.g.
 ```php
