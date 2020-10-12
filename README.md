@@ -40,7 +40,7 @@ HBOIE_JASPER_REPORT_PASSWORD=jasperadmin
 HBOIE_JASPER_REPORT_ORGID=
 ```
 
-## Basic Usage in Symfony 4 / 5 <a name="basic_usage_4_5" />
+## <a name="basic_usage_4_5">Basic Usage in Symfony 4 / 5 </a>
 
 The bundle supports autowiring, so you can access the report-service directly in your controller, e.g.
 ```php
