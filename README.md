@@ -2,6 +2,8 @@
 
 The JasperReportBundle requires jaspersoft/rest-client and provides an JasperReport-Client as service in the Symfony service container.
 
+[[_TOC_]]
+
 [Installation with Symfony Flex (4 / 5)](#installation_4_5)<br>
 [Basic Usage in Symfony 4 / 5](#basic_usage_4_5)<br>
 [Installation with Symfony 2 / 3](#installation_2_3)<br>
