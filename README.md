@@ -2,8 +2,6 @@
 
 The JasperReportBundle requires jaspersoft/rest-client and provides an JasperReport-Client as service in the Symfony service container.
 
-[[_TOC_]]
-
 [Installation with Symfony Flex (4 / 5)](#installation_4_5)<br>
 [Basic Usage in Symfony 4 / 5](#basic_usage_4_5)<br>
 [Installation with Symfony 2 / 3](#installation_2_3)<br>
@@ -13,7 +11,7 @@ The JasperReportBundle requires jaspersoft/rest-client and provides an JasperRep
 [Import Resource Command](#import_resource_command)<br>
 [Copying Resources between different Servers](#copying_resources)<br>
 
-## <a name="installation_4_5" ></a>Installation with Symfony Flex (4 / 5) 
+## <a name="installation_4_5"></a>Installation with Symfony Flex (4 / 5) 
 
 1 Add bundle to <code>composer.json</code>:
 ```shel
@@ -62,7 +60,7 @@ The bundle supports autowiring, so you can access the report-service directly in
     }
 ```
 
-## Installation with Symfony 2 / 3 <a name="installation_2_3" />
+## <a name="installation_2_3"></a>Installation with Symfony 2 / 3
 
 1 Add bundle to <code>composer.json</code>:
 ```shel
@@ -93,7 +91,7 @@ The bundle supports autowiring, so you can access the report-service directly in
 ```
 5 Add your own configuration in <code>app/config/paramters.yml</code>
 
-## Basic Usage in Symfony 2 / 3 <a name="basic_usage_2_3" />
+## <a name="basic_usage_2_3"></a>Basic Usage in Symfony 2 / 3
 
 You can now access the <code>Client</code> object via the Symfony service <code>jasperreport.client</code>:
 ```php
@@ -118,7 +116,7 @@ So a controller giving back a pdf-report would look like
     }
 ```
 
-## Search Resource Command <a name="search_resource_command" />
+## <a name="search_resource_command"></a>Search Resource Command
 
 With the <code>jasper:repository:search</code> you can search resources on the JaserReport server
 
@@ -131,7 +129,7 @@ With the <code>jasper:repository:search</code> you can search resources on the J
 If no detail-value is given, only the uri of the resources will be listed. If an detail value greater 
 than 0 is given, full data will be displayed.
  
-## Export Resource Command <a name="export_resource_command" />
+## <a name="export_resource_command"></a>Export Resource Command
 
 With the <code>jasper:export:resource</code> command, a given resource will be exported 
 from the JasperServer and downloaded to an zip-archive file.
@@ -145,7 +143,7 @@ from the JasperServer and downloaded to an zip-archive file.
 **SkipDependentResources:** if set to "true", dependent resource, e.g. the database 
 connection of a report will be skipped.<br>
 
-## Import Resource Command <a name="import_resource_command" />
+## <a name="import_resource_command"></a>Import Resource Command
 
 With the <code>jasper:import:resource</code> command, a previously exported resource 
 can be imported to a JasperServer.
@@ -159,7 +157,7 @@ can be imported to a JasperServer.
 (e.g. exported with the option <code>SkipDependentResources</code>) the import process
 attempts to import the resource by resolving dependencies with local resources.<br>
 
-## Copying Resources between different Servers <a name="copying_resources" />
+## <a name="copying_resources"></a>Copying Resources between different Servers
 
 You can use the export and import resources commands to copy resources from 
 one server to another, e.g. between different stages of
