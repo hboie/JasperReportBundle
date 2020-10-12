@@ -29,12 +29,15 @@ class ImportResourceCommand extends Command
         $this
             ->setName('jasper:import:resource')
             ->setDescription('Import Resource from Jasper-Server')
-            ->addArgument('filename', InputArgument::REQUIRED, 'filename');
+            ->addArgument('filename', InputArgument::REQUIRED, 'filename')
+            ->addArgument('includebrokenDependencies', InputArgument::OPTIONAL,
+                'include broken dependencies');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $filename = null;
+        $includebrokenDependencies = false;
 
         if ( $input->getArgument('filename') != "" ) {
             $filename = $input->getArgument('filename');
@@ -42,7 +45,11 @@ class ImportResourceCommand extends Command
             return Command::FAILURE;
         }
 
-        $this->importService->importResource($filename);
+        if ( $input->getArgument('includebrokenDependencies') == "true" ) {
+            $includebrokenDependencies = true;
+        }
+
+        $this->importService->importResource($filename, $includebrokenDependencies, 2, false);
 
         return Command::SUCCESS;
     }

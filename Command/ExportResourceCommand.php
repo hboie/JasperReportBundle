@@ -30,12 +30,16 @@ class ExportResourceCommand extends Command
             ->setName('jasper:export:resource')
             ->setDescription('Export Resource from Jasper-Server')
             ->addArgument('uri', InputArgument::REQUIRED, 'uri of resource')
-            ->addArgument('filename', InputArgument::OPTIONAL, 'filename of output');   }
+            ->addArgument('filename', InputArgument::OPTIONAL, 'filename of output')
+            ->addArgument('skipDependentResources', InputArgument::OPTIONAL,
+                'skip dependent resources, e.g. database connection');
+    }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $uri = null;
         $filename = "export";
+        $skipDependentResources = false;
 
         if ( $input->getArgument('uri') != "" ) {
             $uri = $input->getArgument('uri');
@@ -46,7 +50,13 @@ class ExportResourceCommand extends Command
         if ( $input->getArgument('filename') != "" ) {
             $filename = $input->getArgument('filename');
         }
-        $this->exportService->exportResource($uri, $filename);
+
+        if ( $input->getArgument('skipDependentResources') == "true" ) {
+            $skipDependentResources = true;
+        }
+
+
+        $this->exportService->exportResource($uri, $filename, $skipDependentResources, 2, false);
 
         return Command::SUCCESS;
     }

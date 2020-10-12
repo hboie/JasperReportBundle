@@ -73,22 +73,35 @@ class ImportExportService
      *
      * @param $uri
      * @param string $filename
+     * @param boolean $skipDependentResources
+     * @param int $refreshSec
      */
-    public function exportResource($uri, $filename = "export", $refreshSec = 3)
+    public function exportResource($uri, $filename = "export", $skipDependentResources = false,
+                                   $refreshSec = 3, $silent = true)
     {
         /** @var ExportTask $exportTask */
         $exportTask = new ExportTask();
 
         array_push($exportTask->uris, $uri );
 
+        if ( $skipDependentResources ) {
+            array_push($exportTask->parameters, "skip-dependent-resources" );
+        }
+
         /** @var TaskState $taskState */
         $taskState = $this->jasperImportExportService->startExportTask($exportTask);
+
+        if ( ! $silent ) {
+            echo $taskState->message . "\n";
+        }
 
         $decline = true;
         while ($decline) {
             $taskState = $this->jasperImportExportService->getExportState($taskState->id);
             if ($taskState->phase == "finished") {
-                echo $taskState->message . "\n";
+                if ( ! $silent ) {
+                    echo $taskState->message . "\n";
+                }
                 $decline = false;
             } else {
                 sleep($refreshSec);
@@ -112,8 +125,11 @@ class ImportExportService
      * import resource from file to jasper server
      *
      * @param string $filename
+     * @param bool $includebrokenDependencies
+     * @param int $refreshSec
      */
-    public function importResource($filename = "export", $refreshSec = 3)
+    public function importResource($filename = "export", $includebrokenDependencies = false,
+                                   $refreshSec = 3, $silent = true)
     {
         /** @var ImportTask $importTask */
         $importTask = new ImportTask();
@@ -124,14 +140,24 @@ class ImportExportService
         $importTask->includeMonitoringEvents = false;
         $importTask->includeServerSettings = false;
 
+        if ( $includebrokenDependencies ) {
+            $importTask->brokenDependencies = "include";
+        }
+
         /** @var TaskState $taskState */
         $taskState = $this->jasperImportExportService->startImportTask($importTask, file_get_contents($filename));
+
+        if ( ! $silent ) {
+            echo $taskState->message . "\n";
+        }
 
         $decline = true;
         while ($decline) {
             $taskState = $this->jasperImportExportService->getImportState($taskState->id);
             if ($taskState->phase == "finished") {
-                echo $taskState->message . "\n";
+                if ( ! $silent ) {
+                    echo $taskState->message . "\n";
+                }
                 $decline = false;
             } else {
                 sleep($refreshSec);
