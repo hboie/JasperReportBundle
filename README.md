@@ -169,3 +169,23 @@ the target server.
 Take care that the export and import keys on both servers are adjusted. 
 Read https://community.jaspersoft.com/documentation/tibco-jasperreports-server-security-guide/v7/using-custom-keys
 for further information on how to use customs keys.
+
+Create key store
+
+```
+    keytool -genseckey -keystore ./mystore -storetype jceks -storepass <storepass> -keyalg AES -keysize 128 -alias importExportEncSecret -keypass <keypass>
+```
+
+Copy store to JasperServer's buildomatic directory
+
+```
+    cp ./mystore /opt/jasperreports-server-cp-7.8.0/buildomatic/
+```
+
+Go to the buildomatic directory as root user and import key to JasperServer
+
+```
+    ./js-import.sh --input-key --keystore ./mystore --storepass <storepass> --keyalias importExportEncSecret --keypass <keypass>
+```
+
+Restart the JasperServer application or reboot the server
