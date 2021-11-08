@@ -32,6 +32,7 @@ class Configuration implements ConfigurationInterface
             ->scalarNode('username')->end()
             ->scalarNode('password')->end()
             ->scalarNode('org_id')->end()
+            ->integerNode('timeout')->min(1)->end()
             ->end();
 
         return $treeBuilder;

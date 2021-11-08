@@ -10,6 +10,7 @@ The JasperReportBundle requires jaspersoft/rest-client and provides an JasperRep
 [Export Resource Command](#export_resource_command)<br>
 [Import Resource Command](#import_resource_command)<br>
 [Copying Resources between different Servers](#copying_resources)<br>
+[Additional Configuration Options](#configuration)<br>
 
 ## <a name="installation_4_5"></a>Installation with Symfony Flex (4 / 5) 
 
@@ -189,3 +190,16 @@ Go to the buildomatic directory as root user and import key to JasperServer
 ```
 
 Restart the JasperServer application or reboot the server
+
+## <a name="#configuration"></a>Additional Configuration Options
+
+```yml
+    hboie_jasper_report:
+        host:      'http://localhost:8080/jasperserver'
+        username:  '%env(HBOIE_JASPER_REPORT_USERNAME)%'
+        password:  '%env(HBOIE_JASPER_REPORT_PASSWORD)%'
+        org_id:    '%env(HBOIE_JASPER_REPORT_ORGID)%'
+        timeout:   50
+```
+
+**timeout** timeout for REST-request
