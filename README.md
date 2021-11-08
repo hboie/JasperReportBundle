@@ -191,7 +191,7 @@ Go to the buildomatic directory as root user and import key to JasperServer
 
 Restart the JasperServer application or reboot the server
 
-## <a name="#configuration"></a>Additional Configuration Options
+## <a name="configuration"></a>Additional Configuration Options
 
 ```yml
     hboie_jasper_report:
@@ -202,4 +202,4 @@ Restart the JasperServer application or reboot the server
         timeout:   50
 ```
 
-**timeout** timeout for REST-request
+**timeout:** timeout for REST-request
