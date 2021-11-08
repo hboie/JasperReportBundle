@@ -37,6 +37,13 @@ class Factory
         $org_id = $config['org_id'];
 
         $this->reportClient = new Client($server_url, $username, $password, $org_id);
+
+        if ( isset($config['timeout']) ) {
+            $timeout = intval($config['timeout']);
+            if ( is_numeric($config['timeout']) && $timeout > 0 ) {
+                $this->reportClient->setRequestTimeout( $timeout );
+            }
+        }
     }
 
     /**

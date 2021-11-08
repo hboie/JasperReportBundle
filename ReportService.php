@@ -51,6 +51,6 @@ class ReportService
      */
     public function getReportInputControls($uri)
     {
-        return $this->getReportInputControls($uri);
+        return $this->jaserReportService->getReportInputControls($uri);
     }
 }
