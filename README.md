@@ -202,4 +202,4 @@ Restart the JasperServer application or reboot the server
         timeout:   50
 ```
 
-**timeout:** timeout for REST-request
+**timeout:** timeout for REST-request (in seconds)
